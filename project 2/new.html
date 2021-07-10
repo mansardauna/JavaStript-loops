@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const bodyEl = document.querySelector('body')
+    bodyEl.style.fontFamily = 'Avenir, Sego UI, Ubuntu, Sans-serif'
+    bodyEl.style.justifyContent = 'center'
+    bodyEl.style.alignItems = 'Center'
+    
+    const containerEl = document.createElement('div')
+    containerEl.setAttribute('id', 'container')
+    containerEl.style.display = 'flex'
+    containerEl.style.flexWrap= 'wrap'
+    containerEl.style.flexGrow = 'inherit'
+    containerEl.style.maxWidth = '45rem';
+    containerEl.style.margin = 'auto'; 
+    containerEl.style.gridGap = '5px';
+
+
+
+  
+
+    const displays = [
+      {
+        title: '# HTML',
+        color: '#693860'
+      },
+      {
+        title: '# HTML5',
+        color: '#009841'
+      },
+      {
+        title: '# CSS',
+        color: '#e2ec4e'
+      },
+      {
+        title: '# CSS3',
+        color: '#cd587d'
+      },
+      {
+        title: '# JS',
+        color: '#e74d58'
+      },
+      {
+        title: '# JavaScript',
+        color: '#23de8b'
+      }, {
+        title: '# ES6',
+        color: '#defd8d'
+      }, {
+        title: '# Promise',
+        color: '#e3e114'
+      },
+      {
+        title: '# async await ',
+        color: '#D91892'
+      },
+      {
+        title: '# Database',
+        color: '#E0A9CB'
+      },
+      {
+        title: '# React',
+        color: '#FFFF00'
+      },
+      {
+        title: '# React Hooks',
+        color: '#2BAF07'
+      },
+      {
+        title: '#Context API',
+        color: '#CABE66'
+      },
+  
+        {
+      title: '# React Router',
+        color: '#1535BD',
+      },
+      {
+      title: '# Redux',
+        color: '#01A20F'
+      },
+      {
+      title: '# Node',
+        color: '#21F0BC'
+      },{
+      title: '# MongoDB',
+        color: '#6C9284'
+      },{
+      title: '# SQL',
+        color: '#F05167'
+      },{
+      title: '# APi',
+        color: '#757C7F'
+      },{
+      title: '# DOM',
+        color: '#5D9E6F'
+      },
+        {
+      title: '# Data Science',
+        color: '#C94B65'
+      },{
+      title: '# MERN',
+        color: '#265712'
+      },{
+      title: '# Python',
+        color: '#B8C9DB'
+      },{
+      title: '# Flask',
+        color: '#A79AE2'
+      },{
+      title: '# Statistics',
+        color: '#844445'
+      },{
+      title: '# linear Algebra',
+        color: '#10C619'
+      },
+        {
+      title: '# Numpy',
+        color: '#A2552D'
+      },{
+      title: '# Pandas',
+        color: '#A2552D'
+      },{
+      title: '# Scipy',
+        color: '#9B8A68'
+      },
+      {
+      title: '# Scikit-learn',
+        color: '#FCE84C'
+      },{
+      title: '# Visualation',
+        color: '#88CCE6'
+      },{
+      title: '# D3.js',
+        color: '#66DE30'
+      },
+      
+    ]
+    displays.forEach(display => {
+      const nameEl = document.createElement('span')
+      nameEl.style.display = 'flex'
+      nameEl.setAttribute('id', 'lang')
+      nameEl.style.backgroundColor = display.color
+      nameEl.style.padding = '.3rem 1rem'
+      nameEl.style.fontSize = '15px'
+      nameEl.style.fontWeight = 500
+      nameEl.style.width = 'fit - content'
+      nameEl.style.borderRadius = '1rem'
+      nameEl.innerHTML = `
+      <span>${display.title}</span>
+    `
+    containerEl.appendChild(nameEl)
+    
+
+
+    })
+    bodyEl.appendChild(containerEl)
+   
+
+  </script>
+
+</body>
+</html>

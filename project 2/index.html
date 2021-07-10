@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExLevel 3</title>
+</head>
+<body>
+  <script>
+    const challenges = [
+      {
+        title: '30 Days of Python',
+        topic: 'Python',
+        status: 'Done',
+        highlights: 'Python, Numpy, Pandas, API, Statistics'
+      },
+      {
+        title: '30 Days of Javascript',
+        topic: 'Javascript',
+        status: 'Ongoing',
+        highlights: 'Javascript, Es6, async/await, Promises'
+      },
+      {
+        title: '30 Days of HTML & CSS',
+        topic: 'HTML & CSS',
+        status: 'Coming',
+        highlights: 'HTML, CSS, Flexbox, Grid, Box Model'
+      },
+      {
+        title: '30 Days of React',
+        topic: 'React',
+        status: 'Coming',
+        highlights: 'React Basics, Props, Hooks, Redux'
+      },
+      {
+        title: '30 Days of Reactnative',
+        topic: 'Reactnative',
+        status: 'Coming',
+        highlights: 'Reactnative, Expo, Flex, Plugins'
+      },
+      {
+        title: '30 Days of Fullstack',
+        topic: 'Fullstack',
+        status: 'Coming',
+        highlights: 'Fullstack Basics, Frontend, API'
+      },
+      {
+        title: '30 Days of Data analysis',
+        topic: 'Fullstack',
+        status: 'Coming',
+        highlights: 'Pandas, Numpy, Data analysis'
+      },
+      {
+        title: '30 Days of Machine Learning',
+        topic: 'Machine learning',
+        status: 'Coming',
+        highlights: 'Pandas, Numpy, OpenCV, Machine learning'
+      },
+    ]
+    const colors = {
+      red: '#fd5e53',
+      yellow: '#fddb3a',
+      green: '#21bf73'
+    }
+
+    const bodyEl = document.querySelector('body')
+    bodyEl.style.fontFamily = 'Avenir, Ubuntu, Segoe ui, Sans-serif';
+    const headerEl = document.creat eElement('header')
+    headerEl.innerHTML = `
+      <h1>Asabeneh Yatayeyeh Challenges <span>${new Date().getFullYear()}</span></h1>
+      <h2>30 days of Javascript challenge</h2>
+      <p><span class="time">June 18, 2021 19:57:04</span></p>
+    `
+    headerEl.style.textAlign = 'center'
+    bodyEl.appendChild(headerEl)
+    const yearEl = document.querySelector('h1 > span')
+    yearEl.style.fontSize = '3rem'
+    document.querySelector('header > h2').style.textDecoration = 'underline'
+    const timeEl = document.querySelector('.time')
+    timeEl.style.backgroundColor = 'red'
+    timeEl.style.padding = '0.5rem 2rem'
+
+    const challengesEl = document.createElement('div')
+    challengesEl.style.display = 'grid'
+    challengesEl.style.gridRowGap = '0.25rem'
+
+    challenges.forEach(challenge => {
+      const challengeEl = document.createElement('div')
+      challengeEl.style.display = 'flex'
+      challengeEl.style.justifyContent = 'space-between';
+      challengeEl.style.alignItems = 'center'
+      challengeEl.style.backgroundColor = challenge.status === 'Done' ? colors.green : challenge.status === 'Ongoing' ? colors.yellow : colors.red
+      challengeEl.style.padding = '1rem 1.5rem'
+
+      challengeEl.innerHTML = `
+        <u>${challenge.title}</u>
+        <details>
+          <summary>${challenge.topic}</summary>
+          ${challenge.highlights.split(', ').map(highlight => '<p>' + highlight + '</p>').join('\n')}
+        </details>
+        <span>${challenge.status}</span>
+      `
+
+      challengesEl.appendChild(challengeEl)
+    })
+    bodyEl.appendChild(challengesEl)
+
+    const rand = (max = 256) => Math.floor(Math.random() * max)
+    const months = 'January,February,March,April,May,June,July,August,September,October,November,December'.split(',')
+
+    setInterval(() => {
+      yearEl.style.color = `rgb(${rand()}, ${rand()}, ${rand()})`
+      timeEl.style.backgroundColor = `rgb(${rand()}, ${rand()} , ${rand()})`
+      
+      const now = new Date()
+      timeEl.textContent = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+    }, 1000)
+  </script>
+</body>
+</html>
