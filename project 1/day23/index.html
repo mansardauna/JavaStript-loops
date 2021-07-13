@@ -1,0 +1,142 @@
+`
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="header">
+  <div id="center" class="num">Number Generator </div>
+  <div id="center" class="days">30 days of javaScript:DOM Day 3</div>
+  <div id="center" class="author"> Author : Asabeneh yetayeh</div>
+  <div class="error"></div>
+</div>
+
+<div class="form">
+  <input type="text" placeholder="Generate more numbers ">
+  <button>Generate Number</button>
+</div>
+
+  <script>
+    function isPrimeNo (x) {
+      if (x === 0 || x === 1) return false
+      for (i = x - 1; i > 1; i--) {
+        if (x % i === 0) return false
+      }
+      return true
+    }
+    const errorEl = document.querySelector('.error')
+    const colors = {
+      red: '#fd5e53',
+      yellow: '#fddb3a',
+      green: '#21bf73'
+    }
+    const containerEl = document.createElement('div')
+    containerEl.setAttribute('id', 'container')
+    containerEl.style.display = 'grid'
+    containerEl.style.gridTemplateColumns = 'repeat(9, 1fr)';
+    containerEl.style.maxWidth = '50rem';
+    containerEl.style.margin = 'auto';
+    containerEl.style.gridGap = '5px';
+  
+    const generateNums = (max = 20) =>{
+      containerEl.innerHTML = ''
+    Array.from(Array(max).keys()).forEach(num => {
+      const numEl = document.createElement('div')
+      numEl.style.height = '3rem'
+      numEl.style.display = 'grid'
+      numEl.style.placeItems = 'center'
+      numEl.style.color = 'white'
+      numEl.style.fontSize = '1.5rem'
+      numEl.style.fontWeight = 600
+      numEl.style.backgroundColor = isPrimeNo(num)
+        ? colors.red
+        : num % 2 ? colors.yellow : colors.green
+  
+      numEl.textContent = num
+      containerEl.appendChild(numEl)
+    });
+
+    const bodyEl = document.querySelector('body')
+    bodyEl.style.fontFamily = 'Avenir, Sego UI, Ubuntu, Sans-serif'
+    bodyEl.appendChild(containerEl);
+    };
+    
+    generateNums();
+
+    document.querySelector('button').addEventListener('click', () => {
+        const max = parseInt(document.querySelector('input').value.trim());
+      
+        if (!max) {
+        errorEl.textContent = 'No value entered, input a Number to Generate';
+        errorEl.style.color = 'red'
+        setTimeout(() => {
+          erroEl.textContent = '';
+        }, 4000);
+        return;
+    }
+      if (isNaN(max)) {
+        erroEl.textContent = 'invalid input, Enter  a number';
+        erroEl.style.color = 'purple';
+        setTimeout(() => {
+          erroEl.textContent = '';
+        }, 4000);
+        return;
+      }
+
+        generateNums(max);
+      });
+  </script>
+  <style>
+   .header{
+     display: grid;
+     grid-row-gap: 5px;
+   }
+   #center, .error{
+     margin: auto;
+   }
+   .num{
+     color: #21bf73;
+     font-size: 25px;
+     font-weight: 400;
+   }
+   .days{
+     font-size: 18px;
+     font-weight: 200;
+     margin-top: 1em;
+   }
+   .author{
+     font-size: .8rem;
+     font-weight: 300;
+   }
+   .form{
+     margin: 1em 25em;
+     
+   }
+   input{
+     width: 35em;
+     height: 2rem;
+     border: 1px solid #21bf73;
+     outline-color: #21bf73;
+     margin-right: 1rem;
+   }
+   button{
+     background-color: #21bf73;
+     color: white;
+     border: none;
+     height: 2.5rem;
+     padding: .5rem 1rem;
+     cursor: pointer;
+   }
+   button:focus {
+    outline: none;
+    border: none;
+   }
+   
+  
+  </style>
+</body>
+</html>
