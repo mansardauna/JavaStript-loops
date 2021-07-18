@@ -1,0 +1,47 @@
+html,
+body {
+  font-family: 'Avenir', Segoe UI, Ubuntu, Sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: wheat;
+}
+
+header {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid lightgrey;
+}
+
+#data {
+  max-width: 50%;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 5px;
+}
+
+#data>div {
+  position: relative;
+}
+
+#data>div span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: orange;
+}
+button{
+  background-color: orangered;
+  padding: 1em;
+  color: white;
+  font-weight: 600;
+  border-radius: .5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+button:focus{
+  background-color:tomato ;
+}
