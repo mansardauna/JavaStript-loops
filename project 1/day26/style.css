@@ -1,0 +1,91 @@
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* background-color: wheat; */
+  font-size: px;
+}
+#countries{
+  background-color: rgba(29, 21, 21, 0.4);
+  background-blend-mode: darken;
+  background-image: url(./img/map_image.jpg);
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  height: 10rem;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+#top{
+  width: 100wv;
+  background-image: url(./img/globe-2.jpg);
+  background-size: 100rem;
+  background-repeat: no-repeat;
+  height: 35rem;
+  margin-bottom: 20px;
+  background-blend-mode:overlay;
+  background-color: rgba(32, 101, 87, 0.7);
+  display: flex;
+  justify-content: center;
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-items: center;
+  /* border-radius: 10px; */
+  color: white;
+  
+}
+.grid{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+}
+p{
+  font-size: 3rem;
+  font-weight: 600;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.grid span{
+  font-size: 15px;
+  font-weight: 600;
+  margin: auto;
+}
+.flex{
+  margin: 1rem auto;
+  width: fit-content;
+}
+.btn{
+  padding: .4em;
+  font-weight: 300;
+  border-radius: .3em;
+  border: none;
+  letter-spacing: -1px;
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline: none;
+  font-size: px;
+  color: white;
+  background-color: indigo;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: rgb(76, 49, 96);
+}
+input{
+  width: 20rem;
+  margin: auto;
+  padding: .5rem;
+  border-radius: .5rem;
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  outline: none;
+}
+img{
+  height: .8rem;
+  padding: 0;
+  margin: 0;
+}

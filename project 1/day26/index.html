@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="top">
+    <div class="grid">
+      <p>World coutries list</p>
+      <span>Total Number of countries: 193</span>
+      <div class="flex">
+        <span class="btn" id="start" onclick="startWith()">STARTING WORD</span>
+        <span class="btn" onclick="showCountries()">SEARCH WITH ANY WORD</span>
+        <span class="btn" id="sort">az
+          <img src="./img/arrow-up-fill.png" alt="">
+        </span>
+      </div>
+      <input id="search" type="text" placeholder="Search a Country" />
+      <div id="result"></div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script>
+    const bodyEl = document.querySelector('body');
+    const searchInput = document.getElementById('search');
+    const results = document.getElementById('result');
+
+    let searchTerm = '';
+    let countries;
+
+    const fetchCountries = async () => {
+      countries = await fetch(
+        'https://restcountries.eu/rest/v2/all?fields=name;population;flag'
+      ).then(res => res.json());
+    };
+
+    const showCountries = async () => {
+      results.innerHTML = '';
+
+      await fetchCountries();
+
+      const ul = document.createElement('div');
+      ul.classList.add('con');
+      ul.style.display = 'grid'
+      ul.style.gridTemplateColumns = 'repeat(6, 1fr)'
+      ul.style.justifyContent = 'center'
+      ul.style.alignItems = 'center'
+      ul.style.gridGap = '20px'
+      ul.style.maxWidth = '70rem'
+      ul.style.margin = 'auto'
+
+      countries
+        .filter(country =>
+          country.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        .forEach(country => {
+          const namEl = document.createElement('span');
+          namEl.setAttribute('id', 'countries')
+          namEl.innerText = country.name;
+
+
+          ul.appendChild(namEl);
+          results.appendChild(ul);
+
+        });
+
+      bodyEl.appendChild(results);
+    };
+
+    showCountries();
+    searchInput.addEventListener('input', event => {
+      event.preventDefault()
+      searchTerm = event.target.value.toLowerCase();
+      // showCountries();
+    });
+
+
+  </script>
+</body>
+
+</html>
