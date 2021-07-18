@@ -1,0 +1,80 @@
+
+    html,
+    body {
+      font-family: 'Avenir', Segoe UI, Ubuntu, Sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url(./img/galaxy.gif);
+      height: 100vh;
+      background-attachment: fixed;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    select {
+      margin: 0 0.5rem;
+      padding: .5rem;
+      border: none;
+      outline: none;
+      border-radius: .2rem;
+    }
+
+    option {
+      text-transform: capitalize;
+    }
+
+    main {
+      margin: 2rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 50%;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hide {
+      display: none;
+    
+    }
+
+    img {
+      width: 15rem;
+    }
+
+    div {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      color: white;
+    }
+    input{
+      width: 25em;
+      /* height: 1.5rem; */
+      padding: .5em;
+      border-radius: .2rem;
+      border: none;
+      outline: none
+    }
+    button{
+      height: 2rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      /* width: 10em; */
+      padding: .5rem 1rem;
+      color: white;
+      border-radius: .2rem;
+      border: none;
+      outline: none;
+    }
