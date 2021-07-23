@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>30 Days Of Javascript Challenge Leaderboard</h1>
+  <div class="container1">
+    <input type="text" placeholder="FirstName" />
+    <input type="text" placeholder="LastName" />
+    <input type="text" placeholder="Nationality" />
+    <input type="number" placeholder="Score" />
+    <button class="first-button">Add Player</button>
+  </div>
+  <p></p>
+  <div class="container2">
+    <div class="inner1">
+      <div class="inner2">
+        <span>MATHA YOHANES</span>
+        <span>JUN 30 2021 10:51</span>
+      </div>
+      <span class="nation">FINLAND</span>
+      <span>85</span>
+      <div class="events">
+        <div class="round">
+          <img class="delete" src="./close-line.svg" alt="">
+        </div>
+        <div class="round" onclick="buttonClick();"><span id="add">+5</span></div>
+        <div class="round"><span>-5</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
